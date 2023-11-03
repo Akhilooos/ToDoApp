@@ -1,0 +1,36 @@
+body {
+    background-color: #311d88; 
+  }
+
+  .list-group-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.list-group-item input[type="checkbox"] {
+    margin-left: 10px;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  animation: popupAnimation 3s ease-in-out forwards;
+  opacity: 0;
+  display: none;
+}
+
+@keyframes popupAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
