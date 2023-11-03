@@ -1,4 +1,4 @@
-
+//Js File
 document.addEventListener('DOMContentLoaded', function () {
     const todoListContainer = document.getElementById('todoListContainer');
     const todoList = document.getElementById('todoList');
@@ -70,19 +70,25 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function congratulatePopup(completedTasks) {
-
-        const popup = document.createElement('div');
-        popup.classList.add('popup');
-        popup.textContent = `Congratulations! You have completed ${completedTasks} tasks.`;
-
-        document.body.appendChild(popup);
-
-        popup.style.display = 'block';
-
+        const popupContainer = document.createElement('div');
+        popupContainer.classList.add('popup-container');
+    
+        const gifImage = document.createElement('img');
+        gifImage.src = 'congrats.gif'; // Replace with the URL of your GIF image
+        gifImage.alt = 'Celebration GIF';
+    
+        const popupMessage = document.createElement('div');
+        popupMessage.textContent = `Congratulations! You have completed ${completedTasks} tasks.`;
+    
+        popupContainer.appendChild(gifImage);
+        popupContainer.appendChild(popupMessage);
+    
+        document.body.appendChild(popupContainer);
+    
         setTimeout(() => {
-            document.body.removeChild(popup);
-        }, 5000); 
-
-
+            document.body.removeChild(popupContainer);
+        }, 5000);
     }
+    
+    
 });
