@@ -68,33 +68,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
         isDropdownVisible = !isDropdownVisible;
     });
+
     function congratulatePopup(completedTasks) {
-        // Create a container div for the popup
-        const popupContainer = document.createElement('div');
-        popupContainer.classList.add('popup');
-    
-        // Create an img element for the animated GIF
-        const gifImage = document.createElement('img');
-        gifImage.src = 'images\ 1rRk.gif'; // Set the image path to your gif file
-        gifImage.alt = 'Congratulations GIF'; // Add a description for accessibility
-        gifImage.style.display = 'block'; // Make sure the image is displayed
-    
-        // Create a paragraph element for the congratulations message
-        const congratsMessage = document.createElement('p');
-        congratsMessage.textContent = `Congratulations! You have completed ${completedTasks} tasks.`;
-    
-        // Append the GIF and message to the container
-        popupContainer.appendChild(gifImage);
-        popupContainer.appendChild(congratsMessage);
-    
-        // Append the popup container to the body
-        document.body.appendChild(popupContainer);
-    
-        // Remove the popup after 5 seconds
+
+        const popup = document.createElement('div');
+        popup.classList.add('popup');
+        popup.textContent = `Congratulations! You have completed ${completedTasks} tasks.`;
+
+        document.body.appendChild(popup);
+
+        popup.style.display = 'block';
+
         setTimeout(() => {
-            document.body.removeChild(popupContainer);
-        }, 5000);
+            document.body.removeChild(popup);
+        }, 5000); 
+
+
     }
-    
-    
 });

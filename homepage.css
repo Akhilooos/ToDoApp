@@ -26,6 +26,7 @@ body {
   display: none;
 }
 
+
 @keyframes popupAnimation {
   0% {
       opacity: 0;
